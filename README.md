@@ -1,1 +1,1 @@
-GameofLive
+GameofLife
