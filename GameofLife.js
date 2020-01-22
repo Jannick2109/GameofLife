@@ -7,10 +7,9 @@ var Arr = []
 window.onload = function () {
     var canvas = document.getElementById ('canvas');
     ctx = canvas.getContext('2d');
-    drawField()
-    console.log([])
+    Arr = Arrays(false)
+    setInterval(step, 50)
 }
-{
 function Nachbarzahl (xx, yy) {
         let count = 0
         for (let x = Math.max(xx-1 , 0); x <= Math.min(xx+1, Felder - 1); x++) {
@@ -22,7 +21,7 @@ function Nachbarzahl (xx, yy) {
         }
         return count
     } 
-}
+
 function step() {
     let Arr2 = Arrays(true)
     for (let x in Arr) {
@@ -42,6 +41,7 @@ function step() {
         }
     }
     Arr = Arr2
+    drawField()
 }
 function Arrays (empty) {
     var Arr = []
@@ -59,27 +59,17 @@ function Arrays (empty) {
     }    
     return Arr;
 }
+
 function drawField () {
     ctx.fillStyle ="black"
     ctx.fillRect (0,0, canvas.width, canvas.height);
-
     ctx.fillStyle = "lime"
-    field = Arrays(false)
     for (var x=0; x < Felder; x++) {
         for (var y=0; y < Felder; y++) {
-            if (field[x][y] == true){
+            if (Arr[x][y] == true){
                 ctx.fillRect (x*kachel,y*kachel,kachel -2,kachel -2)
             }
         }
     }
     //ctx.fillRect ()
 }
-function createfield () {
-    var field = []
-    for (A = 0; A < Felder; A++) {
-
-    }
-
-}
-console.log (createfield)
-var interval = setInterval(game.step, 200)
