@@ -1,0 +1,61 @@
+var ctx = null;
+var Felder = 40
+var kachel = 20
+
+function gameloop () {
+
+function Arrays (empty) {
+    var Arr = []
+    for (A = 0; A < Felder; A++) {
+        let A = []
+        Arr.push(A)
+        for (a = 0; a < Felder; a++) {
+            if (!!empty) {
+                v = false
+            } else {
+                v = Math.random() > 0.8
+            }            
+            A.push(v)
+        }
+    }    
+    return Arr;
+}
+
+function drawField () {
+    ctx.fillStyle ="black"
+    ctx.fillRect (0,0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "lime"
+    field = Arrays(false)
+    for (var x=0; x < Felder; x++) {
+        for (var y=0; y < Felder; y++) {
+            if (field[x][y] == true){
+                ctx.fillRect (x*kachel,y*kachel,kachel -2,kachel -2)
+            }
+        }
+    }
+    //ctx.fillRect ()
+}
+
+window.onload = function () {
+    var canvas = document.getElementById ('canvas');
+    ctx = canvas.getContext('2d');
+    drawField()
+    console.log([])
+}
+var Felder = 40
+var kachel = 20
+
+function createfield () {
+    var field = []
+    for (A = 0; A < Felder; A++) {
+
+    }
+
+}
+
+
+
+
+console.log (createfield)
+var interval = setInterval(gameloop, 200)
